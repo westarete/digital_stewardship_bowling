@@ -25,3 +25,14 @@ bonus for that frame is the value of the next two balls rolled.
 In the tenth frame a player who rolls a spare or strike is allowed to roll the
 extra balls to complete the frame.  However no more than three balls can be
 rolled in tenth frame.
+
+## Contributing
+
+1. Clone the repository.
+2. Check out the "end-of-seminar" branch to make sure you're starting at the same
+   point as everyone else.
+3. Create your own branch named after yourself.
+4. Develop your solution.
+5. Push your branch.
+6. Send a pull request to share your solution with everyone else.
+
