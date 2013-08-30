@@ -68,6 +68,61 @@ describe Game do
         game.score.should == 20
       end
     end
+    context "when we roll 3 strikes " do
+      before do
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(5)
+        13.times { game.roll(0) }
+      end
+      it "counts the two rolls following the strike twice - repeated two more times" do
+        game.score.should == 75
+      end
+    end
+    context "when we roll normal game - strikes spares open frames" do
+      before do
+        game.roll(10)
+        game.roll(7)
+        game.roll(3)
+        game.roll(7)
+        game.roll(2)
+        game.roll(9)
+        game.roll(1)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(2)
+        game.roll(3)
+        game.roll(6)
+        game.roll(4)
+        game.roll(7)
+        game.roll(3)
+        game.roll(3)
+      end
+      it "will compute a total" do
+        game.score.should == 168
+      end
+    end
+    context "when we roll 12 (all) strikes " do
+      before do
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+        game.roll(10)
+      end
+      it "perfect game" do
+        game.score.should == 300
+      end
+    end
   end
 
   def roll_spare
